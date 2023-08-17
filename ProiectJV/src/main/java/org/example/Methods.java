@@ -1,62 +1,15 @@
 package org.example;
 
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.util.Scanner;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Vector;
 
-public class Main {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/products";
-    private static final String DB_USER = "root";
-    private static final String DB_PASS = "root";
+public class Methods implements Interfata {
 
-    public static void main(String[] args) {
-        selectAllProducts();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Doriti sa adaugati un produs in magazin? yes/no");
-        String answer1 = scanner.nextLine();
-        if (answer1.equals("yes")) {
-
-            System.out.println("Introduceti numele produsului: ");
-            String nume1 = scanner.nextLine();
-            System.out.println("Introduceti pretul produsului: ");
-            int pret1 = scanner.nextInt();
-            System.out.println("Introduceti cantitatea produsului: ");
-            int cantitate1 = scanner.nextInt();
-            insertProduct(nume1, pret1, cantitate1);
-        }
-        System.out.println("Doriti sa modificati pretul unui produs? yes/no");
-        String answer2 = scanner.nextLine();
-        if (answer2.equals("yes")) {
-            System.out.println("Introduceti numele produsului de modificat: ");
-            String nume2 = scanner.nextLine();
-            System.out.println("Introduceti noul pret: ");
-            int pret2 = scanner.nextInt();
-            updatePret(nume2, pret2);
-        }
-        System.out.println("Doriti sa modificati cantitatea unui produs? yes/no");
-        String answer3 = scanner.nextLine();
-        if (answer3.equals("yes")) {
-            System.out.println("Introduceti numele produsului de modificat: ");
-            String nume3 = scanner.nextLine();
-            System.out.println("Introduceti noua cantitate: ");
-            int cantitate3 = scanner.nextInt();
-            updateCantitate(nume3, cantitate3);
-        }
-        System.out.println("Doriti sa stergeti un produs? yes/no");
-        String answer4 = scanner.nextLine();
-        if(answer4.equals("yes")){
-            System.out.println("Introduceti numele produsului pe care doriti sa il stergeti");
-            String nume4 = scanner.nextLine();
-            deleteProdus(nume4);
-        }
-
-    }
-
-    public static void selectAllProducts() {
+    @Override
+    public void selectAllProducts(JTextArea textArea1, String DB_URL, String DB_USER, String DB_PASS) {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
             System.out.println("Connected to MySQL database");
             System.out.println("Prepare statement");
@@ -65,19 +18,23 @@ public class Main {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM produse");
 
             System.out.println("Lista de produse");
+            textArea1.setText("");
             while (resultSet.next()) {
-                System.out.println(" Nume: " + resultSet.getString("nume") + ", Pret: " +
-                        resultSet.getString("pret") + ", Cantitate: " +
-                        resultSet.getString("cantitate"));
+                String column1 = resultSet.getString("nume");
+                String column2 = resultSet.getString("pret");
+                String column3 = resultSet.getString("cantitate");
+                textArea1.setText(textArea1.getText() + column1 + "\t" + column2 +" \t"+ column3 + "\n");
+
             }
-            System.out.println("-------");
+
         } catch (SQLException e) {
             System.out.println("Connection failure");
             e.printStackTrace();
         }
     }
 
-    public static void insertProduct(String nume1, int pret1, int cantitate1) {
+    @Override
+    public void insertProduct(String nume1, int pret1, int cantitate1, String DB_URL, String DB_USER, String DB_PASS) {
         Produs produs = new Produs(nume1, pret1, cantitate1);
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO PRODUSE VALUES(?, ?, ?)");
@@ -92,7 +49,8 @@ public class Main {
         }
     }
 
-    public static void updatePret(String nume2, int pret2) {
+    @Override
+    public void updatePret(String nume2, int pret2, String DB_URL, String DB_USER, String DB_PASS) {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
             System.out.println("Connected to MySQL database");
             System.out.println("Prepare statement");
@@ -109,7 +67,8 @@ public class Main {
         }
     }
 
-    public static void updateCantitate(String nume3, int cantitate3) {
+    @Override
+    public void updateCantitate(String nume3, int cantitate3, String DB_URL, String DB_USER, String DB_PASS) {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
             System.out.println("Connected to MySQL database");
             System.out.println("Prepare statement");
@@ -126,7 +85,8 @@ public class Main {
         }
     }
 
-    public static void deleteProdus(String nume4) {
+    @Override
+    public void deleteProdus(String nume4, String DB_URL, String DB_USER, String DB_PASS) {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
             System.out.println("Connected to MySQL database");
             System.out.println("Prepare statement");
@@ -143,5 +103,3 @@ public class Main {
 
     }
 }
-
-

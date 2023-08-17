@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.example.InterfataGrafica">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="16" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="32" y="20" width="772" height="538"/>
+    </constraints>
+    <properties>
+      <background color="-16242111"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="33c49" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Introduceti pretul produsului"/>
+        </properties>
+      </component>
+      <component id="e08f3" class="javax.swing.JTextField" binding="textPret">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="526e2" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Introduceti cantitatea produsului"/>
+        </properties>
+      </component>
+      <component id="3fc77" class="javax.swing.JTextField" binding="textCantitate">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="77a21" class="javax.swing.JButton" binding="adaugareProdusButton" default-binding="true">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Adauga produs"/>
+        </properties>
+      </component>
+      <component id="eb72b" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Introduceti numele produsului"/>
+        </properties>
+      </component>
+      <component id="444c8" class="javax.swing.JTextField" binding="textNume1">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="96053" class="javax.swing.JTextField" binding="textPretNou">
+        <constraints>
+          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="29769" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Introduceti noul pret"/>
+        </properties>
+      </component>
+      <component id="7adb8" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Introduceti noua cantitate"/>
+        </properties>
+      </component>
+      <component id="ad4b3" class="javax.swing.JTextField" binding="textCantitateNoua">
+        <constraints>
+          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="f4b6a" class="javax.swing.JButton" binding="stergeProdusButton" default-binding="true">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Sterge produs"/>
+        </properties>
+      </component>
+      <vspacer id="24fc8">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="14"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <vspacer id="4bc2f">
+        <constraints>
+          <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="14"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <component id="62546" class="javax.swing.JButton" binding="listaDeProduseButton" default-binding="true">
+        <constraints>
+          <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Refresh"/>
+        </properties>
+      </component>
+      <hspacer id="2060f">
+        <constraints>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="cfe1">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="12ba9">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="76c0c">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="43297" class="javax.swing.JButton" binding="modificaPretButton" default-binding="true">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Modifica pret"/>
+        </properties>
+      </component>
+      <component id="57368" class="javax.swing.JButton" binding="modificaCantitateButton" default-binding="true">
+        <constraints>
+          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="30"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Modifica cantitate"/>
+        </properties>
+      </component>
+      <hspacer id="e00d3">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="14" height="35"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <hspacer id="83187">
+        <constraints>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="14" height="35"/>
+          </grid>
+        </constraints>
+      </hspacer>
+      <component id="76180" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="485" height="35"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Daca doriti sa adaugati/stergeti un produs completati fieldurile urmatoare cu date valabile"/>
+        </properties>
+      </component>
+      <component id="b9034" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Introduceti numele produsului"/>
+        </properties>
+      </component>
+      <component id="e4a9d" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <hspacer id="87895">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="109c" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+        <constraints>
+          <grid row="14" column="0" row-span="1" col-span="5" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="44"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <hspacer id="bc530">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="5e54" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-14962501"/>
+          <text value="Daca doriti sa modificati pretul/cantitatea unui produs, introduceti numele acestuia si noua/noile valori"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
