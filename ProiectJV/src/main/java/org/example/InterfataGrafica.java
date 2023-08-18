@@ -22,6 +22,12 @@ public class InterfataGrafica extends JFrame{
     private JTextField textField1;
     private JTextField textPret;
     private JTextField textCantitate;
+    private JButton clearButton;
+    private JTextField textSterg;
+    private JButton clearButton1;
+    private JButton clearButton2;
+    private JTextField textMesaj1;
+    private JTextField textMesaj2;
 
 
     public InterfataGrafica(){
@@ -32,6 +38,7 @@ public class InterfataGrafica extends JFrame{
         setVisible(true);
         listaDeProduseButton.setPreferredSize(new Dimension(10, 50));
         textArea1.setPreferredSize(new Dimension(10, 500));
+        textArea1.setText("Apasati butonul \"Afisati lista de produse\" pentru a afisa lista de produse sau pentru a observa modificarile");
 
 
         listaDeProduseButton.addActionListener(new ActionListener() {
@@ -46,17 +53,26 @@ public class InterfataGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String numeProdus = textField1.getText();
-                int pretProdus = Integer.parseInt(textPret.getText());
-                int cantitateProdus = Integer.parseInt(textCantitate.getText());
-                Interfata interfata;
-                interfata = new Methods();
-                interfata.insertProduct(numeProdus, pretProdus, cantitateProdus, DB_URL, DB_USER, DB_PASS);
+                try{
+                    int pretProdus = Integer.parseInt(textPret.getText());
+                    int cantitateProdus = Integer.parseInt(textCantitate.getText());
+                    if(pretProdus>0 && cantitateProdus>0){
+                        Interfata interfata;
+                        interfata = new Methods();
+                        interfata.insertProduct(numeProdus, pretProdus, cantitateProdus, DB_URL, DB_USER, DB_PASS);
+                        textMesaj1.setText("Ati adaugat produsul cu succes!");
+                    } else {
+                        textMesaj1.setText("Datele introduse nu sunt valide!");
+                    }
+                } catch (NumberFormatException exception){
+                    textMesaj1.setText("Datele introduse nu sunt valide!");
+                }
             }
         });
         stergeProdusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String numeProdus = textField1.getText();
+                String numeProdus = textSterg.getText();
                 Interfata interfata;
                 interfata = new Methods();
                 interfata.deleteProdus(numeProdus, DB_URL, DB_USER, DB_PASS);
@@ -66,23 +82,63 @@ public class InterfataGrafica extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String numeProdus1 = textNume1.getText();
-                int pretNou = Integer.parseInt(textPretNou.getText());
-                Interfata interfata;
-                interfata = new Methods();
-                interfata.updatePret(numeProdus1, pretNou,DB_URL, DB_USER, DB_PASS );
+                try {
+                    int pretNou = Integer.parseInt(textPretNou.getText());
+                    if(pretNou>0){
+                        Interfata interfata;
+                        interfata = new Methods();
+                        interfata.updatePret(numeProdus1, pretNou,DB_URL, DB_USER, DB_PASS );
+                        textMesaj2.setText("Modificare facuta cu succes!");
+                    } else{
+                        textMesaj2.setText("Datele introduse nu sunt valide!");
+                    }
+                } catch (NumberFormatException exception){
+                    textMesaj2.setText("Datele introduse nu sunt valide!");
+                }
             }
         });
         modificaCantitateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String numeProdus1 = textNume1.getText();
-                int cantitateNoua = Integer.parseInt(textCantitateNoua.getText());
-                Interfata interfata;
-                interfata = new Methods();
-                interfata.updateCantitate(numeProdus1, cantitateNoua,DB_URL, DB_USER, DB_PASS );
+                String numeProdus2 = textNume1.getText();
+                try{
+                    int cantitateNoua = Integer.parseInt(textCantitateNoua.getText());
+                    if(cantitateNoua>0){
+                        Interfata interfata;
+                        interfata = new Methods();
+                        interfata.updateCantitate(numeProdus2, cantitateNoua,DB_URL, DB_USER, DB_PASS );
+                        textMesaj2.setText("Modificare facuta cu succes!");
+                    }else{
+                        textMesaj2.setText("Datele introduse nu sunt valide!");
+                    }
+                } catch(NumberFormatException exception){
+                    textMesaj2.setText("Datele introduse nu sunt valide!");
+                }
             }
         });
 
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textField1.setText("");
+                textPret.setText("");
+                textCantitate.setText("");
+            }
+        });
+        clearButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textSterg.setText("");
+            }
+        });
+        clearButton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textNume1.setText("");
+                textPretNou.setText("");
+                textCantitateNoua.setText("");
+            }
+        });
     }
     public static void main(String[] args) {
         InterfataGrafica interfataGrafica = new InterfataGrafica();
