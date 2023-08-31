@@ -1,12 +1,10 @@
 package org.example;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Vector;
 
-public class Methods implements Interfata {
+
+public class ProductRepository implements Interfata {
 
     @Override
     public void selectAllProducts(JTextArea textArea1, String DB_URL, String DB_USER, String DB_PASS) {
@@ -23,7 +21,7 @@ public class Methods implements Interfata {
                 String column1 = resultSet.getString("nume");
                 String column2 = resultSet.getString("pret");
                 String column3 = resultSet.getString("cantitate");
-                textArea1.setText(textArea1.getText() + column1 + "\t" + column2 +" \t"+ column3 + "\n");
+                textArea1.setText(textArea1.getText() + column1 + "\t" + column2 + " \t" + column3 + "\n");
 
             }
 
@@ -101,5 +99,9 @@ public class Methods implements Interfata {
             e.printStackTrace();
         }
 
+    }
+
+    public void negativeNumber(int numar) {
+        throw new IllegalArgumentException("Pretul trebuie sa fie pozitiv!");
     }
 }

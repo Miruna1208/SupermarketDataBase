@@ -1,14 +1,17 @@
 import org.example.Interfata;
 import org.example.InterfataGrafica;
-import org.example.Methods;
+import org.example.ProductRepository;
 import org.example.Produs;
 import org.junit.Test;
+
+import javax.swing.*;
 import java.sql.*;
 import java.sql.ResultSet;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
-public class MethodsTest {
+public class projectTest {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/products";
     private static final String DB_USER = "root";
     private static final String DB_PASS = "root";
@@ -17,7 +20,7 @@ public class MethodsTest {
         Produs produs = new Produs("test", 10, 20);
         InterfataGrafica interfataGrafica = new InterfataGrafica();
         Interfata interfata;
-        interfata = new Methods();
+        interfata = new ProductRepository();
         interfata.insertProduct("test", 10, 20, DB_URL, DB_USER, DB_PASS);
         interfata.updatePret("test", 20, DB_URL, DB_USER, DB_PASS);
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
@@ -39,10 +42,17 @@ public class MethodsTest {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
     }
 
-
+    @Test
+    public void negativeNumberTest(){
+        int pretTest = -1;
+       assertThrows(IllegalArgumentException.class,
+               () -> {
+                   Interfata interfata;
+                   interfata = new ProductRepository();
+                   interfata.negativeNumber(pretTest);
+               });
+    }
 
 }
